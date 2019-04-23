@@ -1,0 +1,19 @@
+approve:
+- repos:
+  - Azure/genesys
+  implicit_self_approve: true
+  lgtm_acts_as_approve: true
+
+plugins:
+  Azure/genesys:
+  - help
+  - hold
+  - approve
+  - assign
+  - label
+  - lgtm
+  - wip
+  - config-updater
+  - lifecycle
+  - size
+ 

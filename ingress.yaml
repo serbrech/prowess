@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prow-ingress
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+  - secretName: prow-tls
+    hosts:
+    - prowess.westus2.cloudapp.azure.com
+  rules:
+  - host: prowess.westus2.cloudapp.azure.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: deck
+          servicePort: 80
+      - path: /hook
+        backend:
+          serviceName: hook
+          servicePort: 8888

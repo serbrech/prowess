@@ -1,0 +1,17 @@
+log_level: debug
+
+tide:
+  merge_method:
+    Azure/genesys: squash
+  queries:
+  - repos:
+    - Azure/genesys
+    labels:
+    - lgtm
+    - approved
+    missingLabels:
+    - do-not-merge
+    - do-not-merge/hold
+    - do-not-merge/work-in-progress
+    - needs-ok-to-test
+    - needs-rebase
