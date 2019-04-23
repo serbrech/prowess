@@ -3,6 +3,10 @@ approve:
   - Azure/genesys
   implicit_self_approve: true
   lgtm_acts_as_approve: true
+- repos:
+  - Azure/aks-engine
+  lgtm_acts_as_approve: true
+  require_self_approval: false
 
 plugins:
   Azure/genesys:
@@ -16,4 +20,18 @@ plugins:
   - config-updater
   - lifecycle
   - size
- 
+  Azure/aks-engine:
+  - approve
+  - assign
+  - cat
+  - config-updater
+  - dog
+  - help
+  - hold
+  - label
+  - lgtm
+  - lifecycle
+  - shrug
+  - size
+  - wip
+  - yuks

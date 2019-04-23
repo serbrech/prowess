@@ -1,17 +1,15 @@
 # Prow
 
-Prow is a CI system that offers various features such as rich Github automation,
-and running tests in Jenkins or on a Kubernetes cluster. You can read more about
-Prow in [upstream docs][0].
+Prow is a CI system that offers various features such as rich Github automation.
+Read more about the project : [Prow](https://github.com/kubernetes/test-infra/tree/master/prow#readme)
 
-## project setup
+## Project setup 
 
-We use prow for github hooks integration.
-Read about the requirements for the bot rights on your repo : 
+We use prow for github hooks integration mostly.
+Read about the requirements for the bot access rights on your repo : [Getting started](https://github.com/kubernetes/test-infra/blob/master/prow/getting_started_deploy.md)
 
-https://github.com/kubernetes/test-infra/tree/master/prow#prow
 
-### AKS cluster
+### How this instance is setup
 
 Setup an AKS cluster with HTTP-routing enabled.
 - create a `.secrets` folder at the root of the repo
@@ -25,7 +23,6 @@ Before deploying the services, make sure to set the cluster's public ip address 
 - `make prow-services` adds the prow services.
 
 Set your github's project hook to `https://<PROW_URL>/hook` and send it all events. A green tick should come up.
-
 
 ### Troubleshoot 
 
